@@ -1,7 +1,7 @@
 version: '3'
 services:
   volttron:
-    image: volttron/volttron
+    image: volttron/volttron:zmq-develop
     ports:
       - 22916:22916
     volumes:
