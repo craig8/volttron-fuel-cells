@@ -1,13 +1,16 @@
 version: '3'
 services:
   volttron:
+    # user/image:tag
     image: volttron/volttron:zmq-develop
     ports:
+      # host port:container port
       - 22916:22916
     volumes:
+      # Format is host location:container location
       - ./platform_config.yml:/platform_config.yml
       - ./configs:/home/volttron/configs
-      - ./vhome:/home/volttron/.volttron
+      - ./mounted_volttron_home:/home/volttron/.volttron
     environment:
       - CONFIG=/home/volttron/configs
       #- LOCAL_USER_ID=1000
